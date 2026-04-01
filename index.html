@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[아트플롯] 전시 운영 매니저 채용</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-300: #d4d4d4;
+      --gray-500: #737373;
+      --gray-700: #404040;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* Header */
+    .header {
+      padding: 40px 60px 32px;
+      border-bottom: 1px solid var(--gray-300);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--black);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 60px 60px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--gray-500);
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    /* Info pills */
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .info-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+
+    .info-pill .label {
+      color: var(--gray-500);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info-pill .value {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* Main content */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 60px;
+    }
+
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    ul.list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.list li {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.9;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    ul.list li::before {
+      content: "—";
+      color: var(--gray-500);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    ul.list li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight-box {
+      background: var(--gray-100);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+
+    .highlight-box p {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-bottom: 0;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--black);
+      color: var(--white);
+      padding: 72px 60px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-section p {
+      font-size: 15px;
+      color: #aaa;
+      margin-bottom: 36px;
+    }
+
+    .cta-email {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black);
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .apply-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 60px;
+      border-top: 1px solid #222;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer .logo {
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header { padding: 28px 24px; }
+      .hero { padding: 48px 24px 40px; }
+      .content { padding: 48px 24px; }
+      .cta-section { padding: 48px 24px; }
+      .footer {
+        padding: 24px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">ARTPLOT</div>
+    <span class="badge">Hiring</span>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-label">채용 공고 · 2026</p>
+    <h1 class="hero-title">전시 운영 매니저</h1>
+    <p class="hero-sub">
+      예술적 감각과 현장 운영 역량을 함께 갖춘 분을 모십니다.<br />
+      아트플롯과 함께 전시의 모든 순간을 설계해주세요.
+    </p>
+
+    <div class="info-row">
+      <div class="info-pill">
+        <span class="label">고용 형태</span>
+        <span class="value">계약직</span>
+      </div>
+      <div class="info-pill">
+        <span class="label">경력</span>
+        <span class="value">신입·주니어 (1~3년)</span>
+      </div>
+      <div class="info-pill">
+        <span class="label">근무 형태</span>
+        <span class="value">상주 근무</span>
+      </div>
+      <div class="info-pill">
+        <span class="label">급여</span>
+        <span class="value">회사 내규에 따름</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- About -->
+    <div class="section">
+      <p class="section-label">About Artplot</p>
+      <p>
+        아트플롯(ARTPLOT)은 <strong>예술 기획·전시 운영·비즈니스 컨설팅</strong>을 아우르는 아트 컴퍼니입니다.
+        떠도는 모든 예술적 감각을 구조(Plot)로 만드는 일, 그것이 저희가 하는 일입니다.
+      </p>
+      <p>
+        국내외 갤러리, 브랜드, 기관과 협업하며 전시의 기획 단계부터 현장 운영까지 통합적으로 관리합니다.
+      </p>
+    </div>
+
+    <!-- Job Description -->
+    <div class="section">
+      <p class="section-label">주요 업무</p>
+      <ul class="list">
+        <li>전시 현장 운영 및 일정 관리 (셋업·오픈·철수 전 과정)</li>
+        <li>참여 갤러리 및 작가 커뮤니케이션·코디네이션</li>
+        <li>외부 협력사(설치팀, 운송사, 인쇄소 등) 섭외 및 계약 관리</li>
+        <li>전시 예산 집행 및 정산 서류 처리</li>
+        <li>행사 당일 스태프 관리 및 현장 돌발 상황 대응</li>
+        <li>전시 관련 자료(보도자료, 초청장, 리스트 등) 작성·배포 지원</li>
+        <li>행사 후 결과 보고서 작성 및 아카이빙</li>
+      </ul>
+    </div>
+
+    <!-- Requirements -->
+    <div class="section">
+      <p class="section-label">지원 자격</p>
+      <ul class="list">
+        <li>전시·문화예술·이벤트 기획 관련 경험이 있는 분 (인턴·아르바이트 경험 포함)</li>
+        <li>꼼꼼한 일정 관리와 멀티태스킹에 능하신 분</li>
+        <li>원활한 대인 커뮤니케이션 능력을 갖추신 분</li>
+        <li>MS Office / Google Workspace 활용 가능하신 분</li>
+        <li>현장 중심 업무에 거부감이 없으신 분 (주말·행사 기간 근무 가능)</li>
+      </ul>
+    </div>
+
+    <!-- Preferred -->
+    <div class="section">
+      <p class="section-label">우대 사항</p>
+      <ul class="list">
+        <li>미술관·갤러리·아트페어 등 예술 관련 현장 경험 보유</li>
+        <li>영어 커뮤니케이션 가능 (해외 갤러리 협업)</li>
+        <li>기본적인 디자인 툴(Figma, Canva, Illustrator 등) 활용 가능</li>
+        <li>운전면허 보유</li>
+      </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="section">
+      <p class="section-label">근무 조건 및 복리후생</p>
+      <ul class="list">
+        <li>4대 보험 적용</li>
+        <li>연차 및 법정 휴가 보장</li>
+        <li>전시·아트페어 현장 경험 및 업계 네트워크 형성 기회</li>
+        <li>자율적이고 수평적인 조직 문화</li>
+        <li>급여: 회사 내규에 따름 (면접 후 협의)</li>
+      </ul>
+    </div>
+
+    <!-- How to apply -->
+    <div class="section">
+      <p class="section-label">지원 방법</p>
+      <p>이메일로 이력서 및 포트폴리오(선택)를 제출해주세요.</p>
+      <div class="highlight-box">
+        <p>📎 &nbsp;이력서 + 포트폴리오(선택) → <strong>이메일 제출</strong></p>
+        <p style="margin-top: 8px;">✉️ &nbsp;<strong>studio@artplot.kr</strong></p>
+        <p style="margin-top: 8px;">💬 &nbsp;메일 제목: <strong>[지원] 전시 운영 매니저 _ 이름</strong></p>
+      </div>
+      <div class="highlight-box" style="margin-top: 12px; background: #fff8f0; border: 1px solid #f0e0c8;">
+        <p>📌 &nbsp;서류 검토 후 합격자에 한해 개별 연락드립니다.</p>
+        <p style="margin-top: 4px;">지원 서류는 채용 목적 외 사용하지 않으며, 채용 종료 후 즉시 파기합니다.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>아트플롯과 함께 만들어가요</h2>
+    <p>From Floating to Plotting — 예술을 구조로 만드는 여정에 함께해주세요.</p>
+    <a class="cta-email" href="mailto:studio@artplot.kr?subject=[지원] 전시 운영 매니저 _ 이름">
+      지원하기 →
+    </a>
+    <p class="apply-note">* 채용 기간: 채용 시 마감</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="logo">ARTPLOT</div>
+    <p>© 2026 Artplot. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
